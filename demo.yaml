@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: democicd
 spec:
-  replicas: 1
+  replicas: 2
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: httpd
-        image: agawande/httpd:10
+        image: shrikntsharma/httpd:10
         ports:
         - containerPort: 80
         resources:
