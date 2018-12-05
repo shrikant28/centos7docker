@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: democicd
+  name: shrikantapp
 spec:
   replicas: 2
   strategy:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: httpd
-        image: shrikntsharma/httpd:10
+        image: shrikntsharma/httpd:latest
         ports:
         - containerPort: 80
         resources:
@@ -29,10 +29,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: democicd
+  name: shrikantapp
 spec:
   type: LoadBalancer
   ports:
   - port: 80
   selector:
-    app: democicd
+    app: shrikantapp
